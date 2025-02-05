@@ -1,0 +1,73 @@
+
+    <div class="row">
+      
+      <div class="col-4">
+        <div class="card text-center bg-primary border-0">
+          <div class="card-header bg-secondary text-light fs-2">
+            Today Total Sale
+          </div>
+          <?php
+
+          $total_sale = 0;
+          foreach ($sale as $value) 
+          {
+            $temp = $value->Amount;
+            $total_sale += $temp;
+          }
+
+          echo"
+          <div class='card-body'>
+            <h5 class='card-title text-light'>Date: 02-5-25</h5>
+            <p class='card-text text-light fw-bold fs-4'>";
+              if ($total_sale>0)
+              {
+                echo $total_sale;
+              }
+              else
+              {
+                $total_sale = 0;
+                echo $total_sale;
+              }
+              
+              // making 50% profit from total sale
+              $profit = 0;
+              $profit = ($total_sale/100)*50;
+
+              // making net profit by subtracting 50 expense
+              $NetProfit = 0;
+              $NetProfitColor = '';
+              $NetProfit = $profit - 50;
+              if ($NetProfit>=50) {
+                $NetProfitColor = "text-success";
+              }
+              else{
+                $NetProfitColor = "text-danger";
+              }
+          
+          echo "</p>
+          </div>
+        </div>
+      </div>
+      <div class='col-4'>
+        <div class='card text-center bg-primary border-0'>
+          <div class='card-header bg-secondary text-light fs-2'>
+            Today Total Profit 50%
+          </div>
+          <div class='card-body'>
+            <h5 class='card-title text-light'>Date: 02-5-25</h5>
+            <p class='card-text text-light fw-bold fs-4'>".$profit."</p>
+          </div>
+        </div>
+      </div>
+      <div class='col-4'>
+        <div class='card text-center bg-primary border-0'>
+          <div class='card-header bg-secondary text-light fs-2'>
+            Today Net Profit 50
+          </div>
+          <div class='card-body'>
+            <h5 class='card-title text-light'>Date: 02-5-25</h5>
+            <p class='card-text ".$NetProfitColor." fw-bold fs-4'>".$NetProfit."</p>
+          </div>
+        </div>
+      </div>";?>
+    </div>
