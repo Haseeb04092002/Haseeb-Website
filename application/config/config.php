@@ -30,7 +30,7 @@ $config['base_url']    = $root;
 
 
 
-// $config['base_url'] = 'http://localhost/InkmasterPos';
+$config['base_url'] = 'https://github.com/Haseeb04092002';
 
 /*
 |--------------------------------------------------------------------------
