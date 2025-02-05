@@ -104,4 +104,4 @@ define('VIEWPATH', $view_folder.'/');
  * LOAD THE BOOTSTRAP FILE
  *---------------------------------------------------------------
  */
-require_once BASEPATH.'core/CodeIgniter.php';
+// require_once BASEPATH.'core/CodeIgniter.php';
